@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FORMA — B2B Мебель | Официальный дистрибьютор</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="header" id="header">
+  <div class="header__inner">
+    <a href="#" class="logo" onclick="showSection('home')">
+      <span class="logo__mark">F</span>
+      <span class="logo__text">FORMA</span>
+      <span class="logo__sub">Furniture Group</span>
+    </a>
+    <nav class="nav" id="mainNav">
+      <a href="#" class="nav__link active" data-section="home">Главная</a>
+      <a href="#" class="nav__link" data-section="catalog">Каталог</a>
+      <a href="#" class="nav__link" data-section="about">О компании</a>
+      <a href="#" class="nav__link" data-section="contacts">Контакты</a>
+    </nav>
+    <div class="header__actions">
+      <button class="btn btn--outline" id="loginBtn">Войти в кабинет</button>
+    </div>
+    <button class="burger" id="burger" aria-label="Меню">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ===== MAIN SECTIONS ===== -->
+<main>
+
+  <!-- HOME -->
+  <section class="section section--home active" id="home">
+    <div class="hero">
+      <div class="hero__bg">
+        <div class="hero__shape hero__shape--1"></div>
+        <div class="hero__shape hero__shape--2"></div>
+        <div class="hero__grain"></div>
+      </div>
+      <div class="hero__content">
+        <p class="hero__eyebrow">Официальный дистрибьютор · B2B поставки</p>
+        <h1 class="hero__title">Мебель для бизнеса.<br><em>Без компромиссов.</em></h1>
+        <p class="hero__desc">Оптовые поставки корпусной и мягкой мебели для мебельных сетей, отелей, офисов и девелоперов. Более 2 400 SKU в наличии на складе.</p>
+        <div class="hero__cta">
+          <button class="btn btn--primary" onclick="showSection('catalog')">Открыть каталог</button>
+          <button class="btn btn--ghost" id="heroDealerBtn">Стать дилером</button>
+        </div>
+        <div class="hero__stats">
+          <div class="stat"><span class="stat__num">2 400+</span><span class="stat__label">позиций</span></div>
+          <div class="stat__divider"></div>
+          <div class="stat"><span class="stat__num">340</span><span class="stat__label">дилеров по РФ</span></div>
+          <div class="stat__divider"></div>
+          <div class="stat"><span class="stat__num">14 лет</span><span class="stat__label">на рынке</span></div>
+        </div>
+      </div>
+      <div class="hero__visual">
+        <div class="hero__card hero__card--1">
+          <div class="hero__card-img" style="background: var(--warm-2)">
+            <svg viewBox="0 0 200 200" fill="none"><rect x="30" y="110" width="140" height="50" rx="4" fill="#c9a87c" opacity=".6"/><rect x="50" y="60" width="100" height="55" rx="6" fill="#a07850" opacity=".7"/><rect x="55" y="155" width="12" height="25" rx="3" fill="#7a5c38"/><rect x="133" y="155" width="12" height="25" rx="3" fill="#7a5c38"/></svg>
+          </div>
+          <p>Офисная серия <strong>OSLO</strong></p>
+        </div>
+        <div class="hero__card hero__card--2">
+          <div class="hero__card-img" style="background: var(--warm-3)">
+            <svg viewBox="0 0 200 200" fill="none"><rect x="20" y="90" width="160" height="70" rx="10" fill="#e8d5b7" opacity=".8"/><rect x="35" y="68" width="55" height="27" rx="5" fill="#c4a47a"/><rect x="110" y="68" width="55" height="27" rx="5" fill="#c4a47a"/><rect x="45" y="157" width="14" height="22" rx="3" fill="#9e7a4a"/><rect x="141" y="157" width="14" height="22" rx="3" fill="#9e7a4a"/></svg>
+          </div>
+          <p>Мягкая серия <strong>PORTO</strong></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CATEGORIES -->
+    <div class="container section-block">
+      <div class="section-head">
+        <h2 class="section-title">Категории товаров</h2>
+        <a href="#" class="see-all" onclick="showSection('catalog'); return false;">Смотреть всё →</a>
+      </div>
+      <div class="categories">
+        <div class="cat-card" onclick="filterCatalog('office')">
+          <div class="cat-card__icon">🪑</div>
+          <h3>Офисная мебель</h3>
+          <p>Кресла, столы, переговорные</p>
+          <span class="cat-card__count">312 SKU</span>
+        </div>
+        <div class="cat-card" onclick="filterCatalog('soft')">
+          <div class="cat-card__icon">🛋</div>
+          <h3>Мягкая мебель</h3>
+          <p>Диваны, кресла, пуфы</p>
+          <span class="cat-card__count">489 SKU</span>
+        </div>
+        <div class="cat-card" onclick="filterCatalog('storage')">
+          <div class="cat-card__icon">🗄</div>
+          <h3>Шкафы и стеллажи</h3>
+          <p>Корпусные системы хранения</p>
+          <span class="cat-card__count">276 SKU</span>
+        </div>
+        <div class="cat-card" onclick="filterCatalog('hotel')">
+          <div class="cat-card__icon">🏨</div>
+          <h3>Гостиничная серия</h3>
+          <p>Кровати, тумбы, столики</p>
+          <span class="cat-card__count">198 SKU</span>
+        </div>
+        <div class="cat-card" onclick="filterCatalog('outdoor')">
+          <div class="cat-card__icon">🌿</div>
+          <h3>Уличная мебель</h3>
+          <p>Для террас и ресторанов</p>
+          <span class="cat-card__count">124 SKU</span>
+        </div>
+        <div class="cat-card" onclick="filterCatalog('kids')">
+          <div class="cat-card__icon">🎨</div>
+          <h3>Детская мебель</h3>
+          <p>Кровати, парты, стеллажи</p>
+          <span class="cat-card__count">157 SKU</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- WHY US -->
+    <div class="why-block">
+      <div class="container">
+        <h2 class="section-title">Почему выбирают FORMA</h2>
+        <div class="why-grid">
+          <div class="why-item">
+            <div class="why-item__num">01</div>
+            <h4>Складская программа</h4>
+            <p>Более 1 500 позиций постоянно в наличии на складе в Москве. Отгрузка от 1 рабочего дня.</p>
+          </div>
+          <div class="why-item">
+            <div class="why-item__num">02</div>
+            <h4>Дилерские скидки до 42%</h4>
+            <p>Прогрессивная система скидок. Чем больше оборот — тем выше ваш дисконт.</p>
+          </div>
+          <div class="why-item">
+            <div class="why-item__num">03</div>
+            <h4>Персональный менеджер</h4>
+            <p>Каждому дилеру — выделенный менеджер, поддержка 6 дней в неделю.</p>
+          </div>
+          <div class="why-item">
+            <div class="why-item__num">04</div>
+            <h4>Маркетинговые материалы</h4>
+            <p>Каталоги, прайс-листы, 3D-модели и фотографии высокого разрешения — бесплатно.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATALOG -->
+  <section class="section" id="catalog">
+    <div class="container">
+      <div class="catalog-header">
+        <div>
+          <h2 class="page-title">Каталог продукции</h2>
+          <p class="page-subtitle">Актуальные цены указаны в дилерском кабинете</p>
+        </div>
+        <div class="catalog-tools">
+          <input type="text" class="search-input" id="searchInput" placeholder="Поиск по каталогу..." />
+          <select class="filter-select" id="categoryFilter">
+            <option value="all">Все категории</option>
+            <option value="office">Офисная мебель</option>
+            <option value="soft">Мягкая мебель</option>
+            <option value="storage">Шкафы и стеллажи</option>
+            <option value="hotel">Гостиничная серия</option>
+            <option value="outdoor">Уличная мебель</option>
+            <option value="kids">Детская мебель</option>
+          </select>
+          <select class="filter-select" id="sortFilter">
+            <option value="default">Сортировка</option>
+            <option value="name">По названию</option>
+            <option value="new">Новинки</option>
+            <option value="popular">Популярные</option>
+          </select>
+        </div>
+      </div>
+      <div class="catalog-grid" id="catalogGrid">
+        <!-- Populated by JS -->
+      </div>
+      <div class="pagination" id="pagination"></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="about-layout">
+        <div class="about-text">
+          <p class="eyebrow">О компании</p>
+          <h2 class="page-title">FORMA Furniture Group</h2>
+          <p>Основана в 2010 году как оптовый дистрибьютор мебели для корпоративных клиентов. Сегодня мы — один из крупнейших поставщиков B2B мебели в России.</p>
+          <p>Работаем напрямую с производителями в Беларуси, России и Португалии. Собственные склады площадью 18 000 м² в Москве и Екатеринбурге позволяют держать постоянный ассортимент более 1 500 SKU.</p>
+          <p>Наши клиенты — мебельные ретейлеры, девелоперы, гостиничные сети, управляющие компании и офисные интеграторы.</p>
+          <div class="about-facts">
+            <div class="fact"><strong>2010</strong><span>год основания</span></div>
+            <div class="fact"><strong>18 000 м²</strong><span>складских площадей</span></div>
+            <div class="fact"><strong>340+</strong><span>активных дилеров</span></div>
+            <div class="fact"><strong>6 стран</strong><span>производителей</span></div>
+          </div>
+        </div>
+        <div class="about-img-block">
+          <div class="about-img about-img--1"></div>
+          <div class="about-img about-img--2"></div>
+        </div>
+      </div>
+
+      <div class="certs-block">
+        <h3>Сертификаты и документы</h3>
+        <div class="certs-grid">
+          <div class="cert-card">
+            <div class="cert-card__icon">📄</div>
+            <p>Сертификат соответствия ГОСТ</p>
+            <a href="#" class="cert-link">Скачать PDF</a>
+          </div>
+          <div class="cert-card">
+            <div class="cert-card__icon">📄</div>
+            <p>Декларация пожарной безопасности</p>
+            <a href="#" class="cert-link">Скачать PDF</a>
+          </div>
+          <div class="cert-card">
+            <div class="cert-card__icon">📄</div>
+            <p>Гигиенический сертификат</p>
+            <a href="#" class="cert-link">Скачать PDF</a>
+          </div>
+          <div class="cert-card">
+            <div class="cert-card__icon">📄</div>
+            <p>Политика возврата и гарантии</p>
+            <a href="#" class="cert-link">Скачать PDF</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTS -->
+  <section class="section" id="contacts">
+    <div class="container">
+      <h2 class="page-title">Контакты</h2>
+      <div class="contacts-layout">
+        <div class="contacts-info">
+          <div class="contact-block">
+            <h4>Головной офис</h4>
+            <p>📍 Москва, Варшавское шоссе, д. 125, стр. 2<br>Бизнес-центр «Варшавский», офис 401</p>
+          </div>
+          <div class="contact-block">
+            <h4>Телефоны</h4>
+            <p>📞 +7 (495) 123-45-67 — отдел продаж<br>📞 +7 (495) 123-45-68 — сервисная служба</p>
+          </div>
+          <div class="contact-block">
+            <h4>Email</h4>
+            <p>✉️ b2b@forma-furniture.ru — для дилеров<br>✉️ info@forma-furniture.ru — общие вопросы</p>
+          </div>
+          <div class="contact-block">
+            <h4>Режим работы</h4>
+            <p>🕐 Пн–Пт: 9:00 – 18:00<br>🕐 Сб: 10:00 – 15:00 (только склад)</p>
+          </div>
+        </div>
+        <div class="contact-form-wrap">
+          <h4>Оставить заявку</h4>
+          <form class="contact-form" id="contactForm" onsubmit="submitForm(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label>Ваше имя *</label>
+                <input type="text" placeholder="Иван Иванов" required />
+              </div>
+              <div class="form-group">
+                <label>Компания *</label>
+                <input type="text" placeholder="ООО «Ромашка»" required />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Телефон *</label>
+                <input type="tel" placeholder="+7 (___) ___-__-__" required />
+              </div>
+              <div class="form-group">
+                <label>Email</label>
+                <input type="email" placeholder="mail@company.ru" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Тема обращения</label>
+              <select>
+                <option>Стать дилером</option>
+                <option>Оптовый заказ</option>
+                <option>Вопрос по товару</option>
+                <option>Гарантийный случай</option>
+                <option>Другое</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Сообщение</label>
+              <textarea placeholder="Опишите ваш запрос..."></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full">Отправить заявку</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== DEALER CABINET MODAL ===== -->
+<div class="modal-overlay" id="dealerModal">
+  <div class="modal" id="dealerModalBox">
+    <button class="modal__close" onclick="closeModal()">✕</button>
+
+    <!-- LOGIN SCREEN -->
+    <div class="modal-screen active" id="screenLogin">
+      <div class="modal__logo">
+        <span class="logo__mark">F</span>
+        <div>
+          <strong>FORMA</strong>
+          <small>Дилерский кабинет</small>
+        </div>
+      </div>
+      <h2>Вход в кабинет</h2>
+      <p class="modal__sub">Доступ только для авторизованных партнёров</p>
+      <form onsubmit="doLogin(event)">
+        <div class="form-group">
+          <label>Email / Логин</label>
+          <input type="text" id="loginEmail" placeholder="dealer@company.ru" />
+        </div>
+        <div class="form-group">
+          <label>Пароль</label>
+          <input type="password" id="loginPass" placeholder="••••••••" />
+        </div>
+        <div id="loginError" class="login-error" style="display:none">Неверный логин или пароль</div>
+        <button type="submit" class="btn btn--primary btn--full">Войти</button>
+      </form>
+      <div class="modal__links">
+        <a href="#" onclick="showScreen('screenRegister'); return false;">Нет аккаунта? Подать заявку</a>
+        <a href="#" onclick="showScreen('screenRecover'); return false;">Забыли пароль?</a>
+      </div>
+      <div class="modal__demo-hint">
+        <small>Демо-доступ: <b>demo@forma.ru</b> / <b>demo123</b></small>
+      </div>
+    </div>
+
+    <!-- REGISTER SCREEN -->
+    <div class="modal-screen" id="screenRegister">
+      <button class="back-btn" onclick="showScreen('screenLogin')">← Назад</button>
+      <h2>Заявка на дилерство</h2>
+      <p class="modal__sub">Заполните форму — мы свяжемся в течение 1 рабочего дня</p>
+      <form onsubmit="submitRegister(event)">
+        <div class="form-group"><label>Название компании *</label><input type="text" placeholder="ООО «Партнёр»" required/></div>
+        <div class="form-row">
+          <div class="form-group"><label>Контактное лицо *</label><input type="text" placeholder="Иван Петров" required/></div>
+          <div class="form-group"><label>Должность</label><input type="text" placeholder="Директор"/></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label>Телефон *</label><input type="tel" placeholder="+7 (___) ___-__-__" required/></div>
+          <div class="form-group"><label>Email *</label><input type="email" placeholder="mail@company.ru" required/></div>
+        </div>
+        <div class="form-group"><label>Регион</label><input type="text" placeholder="Москва и МО"/></div>
+        <div class="form-group"><label>Планируемый оборот в месяц</label>
+          <select>
+            <option>до 500 000 ₽</option><option>500 000 – 2 000 000 ₽</option>
+            <option>2 000 000 – 10 000 000 ₽</option><option>свыше 10 000 000 ₽</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn--primary btn--full">Отправить заявку</button>
+      </form>
+    </div>
+
+    <!-- RECOVER SCREEN -->
+    <div class="modal-screen" id="screenRecover">
+      <button class="back-btn" onclick="showScreen('screenLogin')">← Назад</button>
+      <h2>Восстановление пароля</h2>
+      <form onsubmit="submitRecover(event)">
+        <div class="form-group"><label>Ваш email</label><input type="email" placeholder="dealer@company.ru"/></div>
+        <button type="submit" class="btn btn--primary btn--full">Отправить ссылку</button>
+      </form>
+    </div>
+
+    <!-- DASHBOARD SCREEN -->
+    <div class="modal-screen" id="screenDashboard">
+      <div class="dashboard">
+        <div class="dashboard__header">
+          <div>
+            <h2>Добро пожаловать, <span id="dealerName">Иван</span> 👋</h2>
+            <p>ООО «МебельПлюс» · Дилер уровня <strong class="badge badge--gold">GOLD</strong></p>
+          </div>
+          <button class="btn btn--outline btn--sm" onclick="doLogout()">Выйти</button>
+        </div>
+
+        <div class="dash-stats">
+          <div class="dash-stat">
+            <span class="dash-stat__val">₽ 1 240 000</span>
+            <span class="dash-stat__label">Оборот за месяц</span>
+            <span class="dash-stat__delta positive">↑ +12%</span>
+          </div>
+          <div class="dash-stat">
+            <span class="dash-stat__val">34%</span>
+            <span class="dash-stat__label">Ваша скидка</span>
+            <span class="dash-stat__delta">до 42% при +20% обороте</span>
+          </div>
+          <div class="dash-stat">
+            <span class="dash-stat__val">7</span>
+            <span class="dash-stat__label">Активных заказов</span>
+            <span class="dash-stat__delta">3 в обработке</span>
+          </div>
+          <div class="dash-stat">
+            <span class="dash-stat__val">₽ 48 200</span>
+            <span class="dash-stat__label">Баланс бонусов</span>
+            <span class="dash-stat__delta positive">+1 400 за неделю</span>
+          </div>
+        </div>
+
+        <div class="dash-tabs">
+          <button class="dash-tab active" data-tab="orders">Мои заказы</button>
+          <button class="dash-tab" data-tab="price">Прайс-лист</button>
+          <button class="dash-tab" data-tab="docs">Документы</button>
+          <button class="dash-tab" data-tab="manager">Мой менеджер</button>
+        </div>
+
+        <!-- ORDERS TAB -->
+        <div class="dash-panel active" id="tab-orders">
+          <table class="orders-table">
+            <thead>
+              <tr><th>№ заказа</th><th>Дата</th><th>Сумма</th><th>Статус</th><th>Действие</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>#F-20241</td><td>25.03.2025</td><td>₽ 312 000</td><td><span class="status status--green">Доставлен</span></td><td><a href="#" class="tbl-link">Детали</a></td></tr>
+              <tr><td>#F-20238</td><td>18.03.2025</td><td>₽ 88 500</td><td><span class="status status--blue">В пути</span></td><td><a href="#" class="tbl-link">Отследить</a></td></tr>
+              <tr><td>#F-20230</td><td>11.03.2025</td><td>₽ 540 000</td><td><span class="status status--orange">В обработке</span></td><td><a href="#" class="tbl-link">Детали</a></td></tr>
+              <tr><td>#F-20218</td><td>03.03.2025</td><td>₽ 195 000</td><td><span class="status status--green">Доставлен</span></td><td><a href="#" class="tbl-link">Детали</a></td></tr>
+              <tr><td>#F-20201</td><td>22.02.2025</td><td>₽ 77 200</td><td><span class="status status--gray">Отменён</span></td><td><a href="#" class="tbl-link">Детали</a></td></tr>
+            </tbody>
+          </table>
+          <button class="btn btn--primary" onclick="showScreen('screenOrder')">+ Новый заказ</button>
+        </div>
+
+        <!-- PRICELIST TAB -->
+        <div class="dash-panel" id="tab-price">
+          <div class="price-info">
+            <p>Ваш дилерский прайс-лист обновлён <strong>01.04.2025</strong>. Учитывает вашу персональную скидку <strong>34%</strong>.</p>
+            <div class="price-downloads">
+              <button class="btn btn--outline" onclick="fakeDownload('Прайс-лист FORMA_April2025.xlsx')">📥 Скачать Excel</button>
+              <button class="btn btn--outline" onclick="fakeDownload('Прайс-лист FORMA_April2025.pdf')">📥 Скачать PDF</button>
+            </div>
+          </div>
+          <table class="orders-table">
+            <thead><tr><th>Арт.</th><th>Наименование</th><th>Роз. цена</th><th>Ваша цена</th><th>Склад</th></tr></thead>
+            <tbody id="priceTableBody"></tbody>
+          </table>
+        </div>
+
+        <!-- DOCS TAB -->
+        <div class="dash-panel" id="tab-docs">
+          <div class="docs-grid">
+            <div class="doc-card"><div class="doc-icon">📄</div><p>Договор поставки</p><small>Актуальная редакция</small><a href="#" class="tbl-link" onclick="fakeDownload('Договор_FORMA_2025.pdf'); return false;">Скачать</a></div>
+            <div class="doc-card"><div class="doc-icon">📊</div><p>Маркетинговые материалы</p><small>Каталог, баннеры, фото</small><a href="#" class="tbl-link" onclick="fakeDownload('Marketing_Kit.zip'); return false;">Скачать</a></div>
+            <div class="doc-card"><div class="doc-icon">📋</div><p>3D модели (архив)</p><small>Форматы .obj, .max, .skp</small><a href="#" class="tbl-link" onclick="fakeDownload('3D_Models.zip'); return false;">Скачать</a></div>
+            <div class="doc-card"><div class="doc-icon">📑</div><p>Сертификаты соответствия</p><small>ГОСТ, пожарная безопасность</small><a href="#" class="tbl-link" onclick="fakeDownload('Certificates.pdf'); return false;">Скачать</a></div>
+          </div>
+        </div>
+
+        <!-- MANAGER TAB -->
+        <div class="dash-panel" id="tab-manager">
+          <div class="manager-card">
+            <div class="manager-avatar">АК</div>
+            <div class="manager-info">
+              <h3>Алексей Козлов</h3>
+              <p>Ваш персональный менеджер</p>
+              <p>📞 +7 (495) 123-45-91</p>
+              <p>✉️ a.kozlov@forma-furniture.ru</p>
+              <p>💬 Telegram: @forma_alex</p>
+              <p class="manager-online">🟢 Онлайн · Отвечает за 15 мин</p>
+              <button class="btn btn--primary btn--sm" onclick="alert('Открытие чата... (в полной версии)')">Написать в чат</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NEW ORDER SCREEN -->
+    <div class="modal-screen" id="screenOrder">
+      <button class="back-btn" onclick="showScreen('screenDashboard')">← Назад к кабинету</button>
+      <h2>Новый заказ</h2>
+      <form onsubmit="submitOrder(event)">
+        <div class="form-group"><label>Адрес доставки *</label><input type="text" placeholder="Москва, ул. Примерная, 1" required/></div>
+        <div class="form-row">
+          <div class="form-group"><label>Желаемая дата</label><input type="date"/></div>
+          <div class="form-group"><label>Форма оплаты</label>
+            <select><option>Безналичный расчёт</option><option>Предоплата 50%</option><option>Постоплата (при наличии договора)</option></select>
+          </div>
+        </div>
+        <div class="form-group"><label>Позиции заказа</label>
+          <div id="orderItems"><div class="order-item-row"><input type="text" placeholder="Арт. или наименование"/><input type="number" placeholder="Кол-во" min="1"/><button type="button" class="remove-row" onclick="this.parentElement.remove()">×</button></div></div>
+          <button type="button" class="btn btn--ghost btn--sm" onclick="addOrderRow()">+ Добавить позицию</button>
+        </div>
+        <div class="form-group"><label>Комментарий к заказу</label><textarea placeholder="Особые условия, цвет, комплектация..."></textarea></div>
+        <button type="submit" class="btn btn--primary btn--full">Отправить заказ</button>
+      </form>
+    </div>
+
+    <!-- SUCCESS SCREEN -->
+    <div class="modal-screen" id="screenSuccess">
+      <div class="success-wrap">
+        <div class="success-icon">✓</div>
+        <h2 id="successTitle">Заявка отправлена!</h2>
+        <p id="successText">Мы свяжемся с вами в течение 1 рабочего дня.</p>
+        <button class="btn btn--primary" onclick="showScreen('screenLogin')">Вернуться</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== PRODUCT MODAL ===== -->
+<div class="modal-overlay" id="productModal">
+  <div class="modal modal--product" id="productModalBox">
+    <button class="modal__close" onclick="closeProductModal()">✕</button>
+    <div class="product-modal__content" id="productModalContent"></div>
+  </div>
+</div>
+
+<!-- ===== TOAST ===== -->
+<div class="toast" id="toast"></div>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <a href="#" class="logo" onclick="showSection('home')">
+        <span class="logo__mark">F</span>
+        <span class="logo__text">FORMA</span>
+      </a>
+      <p>B2B поставки мебели · Официальный дистрибьютор</p>
+      <p>© 2010–2025 FORMA Furniture Group</p>
+    </div>
+    <div class="footer__nav">
+      <h5>Компания</h5>
+      <a href="#" onclick="showSection('about')">О нас</a>
+      <a href="#" onclick="showSection('about')">Сертификаты</a>
+      <a href="#" onclick="showSection('contacts')">Вакансии</a>
+      <a href="#" onclick="showSection('contacts')">Реквизиты</a>
+    </div>
+    <div class="footer__nav">
+      <h5>Дилерам</h5>
+      <a href="#" onclick="document.getElementById('loginBtn').click()">Войти в кабинет</a>
+      <a href="#" onclick="document.getElementById('heroDealerBtn').click()">Стать дилером</a>
+      <a href="#" onclick="showSection('catalog')">Каталог</a>
+    </div>
+    <div class="footer__nav">
+      <h5>Контакты</h5>
+      <a href="tel:+74951234567">+7 (495) 123-45-67</a>
+      <a href="mailto:b2b@forma-furniture.ru">b2b@forma-furniture.ru</a>
+      <a href="#" onclick="showSection('contacts')">Написать нам</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
